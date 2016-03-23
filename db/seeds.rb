@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+(1..5).each do |i|
+  User.create(email: "myemail#{i}@gmail.com")
+end
+
+(1..5).each do |i|
+  ShortenedUrl.create_for_user_and_long_url!(User.all[i], "www.long-url-numero-#{i}.com")
+end
